@@ -191,3 +191,4 @@
 /Users/ibazhdarova/Downloads/BG-AutoProject 2/BGAuto/BGAuto/obj/Debug/netcoreapp3.1/BGAuto.dll
 /Users/ibazhdarova/Downloads/BG-AutoProject 2/BGAuto/BGAuto/obj/Debug/netcoreapp3.1/BGAuto.pdb
 /Users/ibazhdarova/Downloads/BG-AutoProject 2/BGAuto/BGAuto/obj/Debug/netcoreapp3.1/BGAuto.genruntimeconfig.cache
+/Users/ibazhdarova/Downloads/BG-AutoProject 2/BGAuto/BGAuto/obj/Debug/netcoreapp3.1/BGAuto.sourcelink.json

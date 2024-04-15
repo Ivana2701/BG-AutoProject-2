@@ -9,6 +9,7 @@ using System;
 using BGAuto.DAL.DBContext;
 using BGAuto.DAL.Helpers;
 using BGAuto.DAL.Services;
+using Microsoft.Extensions.Logging;
 
 namespace BGAuto
 {

@@ -1,4 +1,4 @@
-USE [BGAutoDataBase]
+USE [CarLabDB]
 GO
 /****** Object:  Table [dbo].[CarsLocations]    Script Date: 4/3/2022 10:27:18 PM ******/
 SET ANSI_NULLS ON
