@@ -1,0 +1,142 @@
+﻿@model BGAuto.Models.CommonEntities.BasicDataModel
+
+
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">@(Model!=null && Model.productsObj!=null ? Model.productsObj.ProductName : "Product Title")</h4>
+            <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
+        </div>
+        <div class="modal-body">
+
+            <div class="row gutter-40 col-mb-80">
+                <div class="postcontent col-lg-12 order-lg-last">
+
+                    <div class="single-product">
+                        <div class="product">
+                            <div class="row gutter-40">
+
+                                <div class="col-md-6">
+
+                                    <!-- Product Single - Gallery
+                                    ============================================= -->
+                                    <div class="product-image">
+                                        <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
+                                            <div class="flexslider">
+                                                <div class="slider-wrap" data-lightbox="gallery">
+                                                    <div class="slide" data-thumb="images/shop/thumbs/dress/3.jpg"><a href="images/shop/dress/3.jpg" title="Pink Printed Dress - Front View" data-lightbox="gallery-item"><img src="images/shop/dress/3.jpg" alt="Pink Printed Dress"></a></div>
+                                                    @{
+                                                        if (Model != null && Model.productsObj != null && Model.productsObj.ProductImage != null)
+                                                        {
+                                                            string bitString = BitConverter.ToString(Model.productsObj.ProductImage);
+                                                            if (bitString == "00" || bitString == "")
+                                                            {
+
+                                                               
+                                                                    <a href="images/shop/dress/3.jpg" title="@Model.productsObj.ProductName" data-lightbox="gallery-item">
+                                                                        <img src="~/themeContent/customer/demos/restaurant/images/menu/breakfast/1.jpg" alt="1">
+                                                                    </a>
+                                                              
+                                                            }
+                                                            else
+                                                            {
+                                                                string imageBase64Data = Convert.ToBase64String(Model.productsObj.ProductImage);
+                                                                string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                                                               <a href="#!" title="@Model.productsObj.ProductName" data-lightbox="gallery-item">
+                                                                        <img src="@imageDataURL" alt="1">
+                                                                    </a>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/themeContent/customer/demos/restaurant/images/menu/breakfast/1.jpg" alt="1">
+                                                        }
+
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                       @* <div class="sale-flash badge bg-danger p-2">Sale!</div>*@
+                                    </div><!-- Product Single - Gallery End -->
+
+                                </div>
+
+                                <div class="col-md-6 product-desc">
+
+                                    <div class="d-flex align-items-center justify-content-between">
+
+                                        <!-- Product Single - Price
+                                        ============================================= -->
+                                        @{
+                                            if (Model!=null && Model.productsObj!=null)
+                                            {
+                                                <div class="product-price"> <ins>$ @Model.productsObj.Price</ins></div><!-- Product Single - Price End -->
+                                            }
+                                            else
+                                            {
+                                                  <div class="product-price"> <ins>$ Not Confirm</ins></div><!-- Product Single - Price End -->
+                                       
+                                            }
+                                        }
+                                      
+
+                                    </div>
+
+                                    <div class="line"></div>
+
+                                    <!-- Product Single - Quantity & Cart Button
+                                    ============================================= -->
+                                    <form class="cart mb-0 d-flex justify-content-between align-items-center" method="post" enctype='multipart/form-data'>
+                                        @{
+                                            int ProductID = Model != null && Model.productsObj != null ? Model.productsObj.ProductID : 0;
+                                        }
+                                        <button type="button" onclick="AddToCart('@ProductID')" class="add-to-cart button m-0">Book Now</button>
+                                    </form><!-- Product Single - Quantity & Cart Button End -->
+
+                                    <div class="line"></div>
+
+                                    <!-- Product Single - Short Description
+                                    ============================================= -->
+                                    <p>
+                                        @(Model!=null && Model.productsObj!=null ? Model.productsObj.Description : "No Description")
+
+                                    </p>
+
+                                    <!-- Product Single - Meta
+                                    ============================================= -->
+                                    <div class="card product-meta">
+                                        <div class="card-body">
+
+                                            <span class="posted_in">Make: <a href="#" rel="tag"> @(Model!=null && Model.productsObj!=null ? Model.productsObj.MakeName : " ")</a>.</span>
+                                             <span class="posted_in">Model: <a href="#" rel="tag"> @(Model!=null && Model.productsObj!=null ? Model.productsObj.ModelName : " ")</a>.</span>
+                                             <span class="posted_in">Color: <a href="#" rel="tag"> @(Model!=null && Model.productsObj!=null ? Model.productsObj.ColorName : " ")</a>.</span>
+                                             <span class="posted_in">Year: <a href="#" rel="tag"> @(Model!=null && Model.productsObj!=null ? Model.productsObj.ProductYear : " ")</a>.</span>
+                                             <span class="posted_in">Location: <a href="#" rel="tag"> @(Model!=null && Model.productsObj!=null ? Model.productsObj.LocationName : " ")</a>.</span>
+                                             <span class="posted_in">Fuel Type: <a href="#" rel="tag"> @(Model!=null && Model.productsObj!=null ? Model.productsObj.FuelType : " ")</a>.</span>
+
+                                        </div>
+                                    </div><!-- Product Single - Meta End -->
+
+
+                                </div>
+
+                                <div class="w-100"></div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

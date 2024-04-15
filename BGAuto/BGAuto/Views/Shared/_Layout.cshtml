@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Vehicle Sell</title>
+
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/normalize.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/main.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/bootstrap.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/all.min.css" />
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/fonts/flaticon.css" />
+    <!-- Full Calender CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/fullcalendar.min.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/animate.min.css" />
+
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/jquery.dataTables.min.css">
+
+    <!-- Custom CSS -->
+    <link href="~/themeContent/admin/css/style.css" rel="stylesheet" />
+
+      <!-- site CSS -->
+    <link href="~/css/site.css" rel="stylesheet" />
+
+     <!-- Select 2 CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/select2.min.css">
+
+       <!-- Date Picker CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/datepicker.min.css">
+
+    <!-- Modernize js -->
+    <script src="~/themeContent/admin/js/modernizr-3.6.0.min.js"></script>
+
+    <!-- toaster alerts css-->
+    <link href="~/themeContent/admin/toastr/toastr.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+
+    <div id="wrapper" class="wrapper bg-ash">
+        <!-- Header Menu Area Start Here -->
+        <partial name="_HeaderAdmin.cshtml" />
+        <!-- Header Menu Area End Here -->
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <partial name="_SideMenu.cshtml" />
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+
+                <!-- Body summery Start Here -->
+                @RenderBody()
+                <!-- Body Media End Here -->
+                <!-- Header Menu Area Start Here -->
+                <partial name="~/Views/Common/_CommonModals.cshtml" />
+                <!-- Header Menu Area End Here -->
+                <!-- Footer Area Start Here -->
+                <partial name="_FooterAdmin.cshtml" />
+                <!-- Footer Area End Here -->
+
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+
+    </div>
+
+
+
+
+    <!-- jquery-->
+    <script src="~/themeContent/admin/js/jquery-3.3.1.min.js"></script>
+    <!-- Plugins js -->
+    <script src="~/themeContent/admin/js/plugins.js"></script>
+    <!-- Popper js -->
+    <script src="~/themeContent/admin/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/themeContent/admin/js/bootstrap.min.js"></script>
+    <!-- Counterup Js -->
+    <script src="~/themeContent/admin/js/jquery.counterup.min.js"></script>
+    <!-- Moment Js -->
+    <script src="~/themeContent/admin/js/moment.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="~/themeContent/admin/js/jquery.waypoints.min.js"></script>
+    <!-- Scroll Up Js -->
+    <script src="~/themeContent/admin/js/jquery.scrollUp.min.js"></script>
+    <!-- Full Calender Js -->
+    <script src="~/themeContent/admin/js/fullcalendar.min.js"></script>
+    <!-- Chart Js -->
+    <script src="~/themeContent/admin/js/Chart.min.js"></script>
+
+    <!-- Data Table Js -->
+    <script src="~/themeContent/admin/js/jquery.dataTables.min.js"></script>
+
+      <!-- Select 2 Js -->
+    <script src="~/themeContent/admin/js/select2.min.js"></script>
+
+      <!-- Date Picker Js -->
+    <script src="~/themeContent/admin/js/datepicker.min.js"></script>
+
+      <!-- toaster alerts js-->
+    <script src="~/themeContent/admin/toastr/toastr.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="~/themeContent/admin/js/main.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <!--jquery validation script -->
+    <script src="~/js/jquery-validation-unobtrusive/jquery.validate.min.js"></script>
+    <script src="~/js/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- common Js in layout -->
+    <script>
+
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-bottom-right",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 2000,
+            "extendedTimeOut": 1000
+        };
+
+
+            $( document ).ready(function() {
+                GetHeaderNotificationsList();
+            });
+
+
+function GetHeaderNotificationsList() {
+
+  
+    var Url = '@Url.Action("GetHeaderNotificationsList", "AdminHome")';
+
+    $.ajax({
+        type: "GET",
+        url: Url,
+
+        data: {},
+        // datatype: "json",
+        cache: false,
+        async: false,
+
+        success: function(data) {
+
+            $('#header_notification_area').html(data);
+
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+           // toastr.error('An error occured. Please try again!');
+
+        }
+    })
+}
+
+    </script>
+
+</body>
+</html>

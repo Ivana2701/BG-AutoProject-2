@@ -1,0 +1,230 @@
+﻿@model BGAuto.Models.CommonEntities.BasicDataModel
+
+@{
+    ViewData["Title"] = "ContactUs List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-5 col-md-5">
+        <!-- Breadcubs Area Start Here -->
+        <partial name="~/Views/Shared/_Breadcrumbs.cshtml" />
+        <!-- Breadcubs Area End Here -->
+    </div>
+
+  
+
+</div>
+
+
+<div class="card height-auto">
+    <div class="card-body">
+        <div class="heading-layout1">
+            <div class="item-title">
+                <h3>Contact Us List</h3>
+            </div>
+            <div class="dropdown">
+            </div>
+        </div>
+
+        <div>
+            <form class="mg-b-20" id="search-form">
+                <div class="row gutters-8">
+                    <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
+                        <input type="text" placeholder="Search by customer name ..." id="CustomerName" class="form-control">
+                    </div>
+
+                    <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
+                        <input type="text" placeholder="Search by customer message ..." id="CustomerMessage" class="form-control">
+                    </div>
+
+
+
+
+                    <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
+                        <button type="button" onclick="searchFilter();" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+
+
+
+        <!-- Grid listing starts here -->
+        <div class="table-responsive" id="data_listing_grid">
+            @await Html.PartialAsync("~/Views/AdminHome/_ContactUsListtPartial.cshtml", Model)
+        </div>
+        <!-- Grid listing ends here -->
+
+    </div>
+</div>
+
+
+
+<!-- edit status modal -->
+<div class="ui-modal-box">
+    <div class="modal-box">
+        <div class="modal sign-up-modal fade" id="edit_data_modal" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="close-btn">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="item-logo">
+                            <h3>Reply</h3>
+                        </div>
+                        <form class="login-form" id="data-edit-common-form">
+                            <div class="row gutters-15">
+                                <div class="form-group col-12">
+                                    <label for="AdminReply">Admin Reply</label>
+                                  <textarea id="AdminReply" name="AdminReply" class="form-control" required></textarea>
+                                    <input type="hidden" id="ContactUsID" name="ContactUsID">
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <button type="button" class="login-btn" onclick="UpdateAdminReply();">
+                                        Update
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section  Scripts{
+
+<script>
+
+
+     $(document).ready(function() {
+      createDataTable('table_listing_data', true);
+    });
+
+
+          function searchFilter() {
+
+            let CustomerName = $("#CustomerName").val();
+            let CustomerMessage=$("#CustomerMessage").val();
+         
+
+               let searchFormData = {
+             CustomerName: CustomerName,
+             CustomerMessage: CustomerMessage
+        
+         }
+
+              var Url = '@Url.Action("ContactUsList", "AdminHome")';
+
+            $.ajax({
+                type: "GET",
+                url: Url,
+
+                data: searchFormData,
+                // datatype: "json",
+                cache: false,
+                async: false,
+
+                success: function (data) {
+
+                     destroyDataTable('table_listing_data');
+
+                    $('#data_listing_grid').html(data);
+
+                       createDataTable('table_listing_data', true);
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                      toastr.error('An error occured. Please try again!');
+
+                }
+            })
+        }
+
+
+
+
+        
+    function showReplyModal(ContactUsID) {
+
+          $('#ContactUsID').val(ContactUsID);
+
+          $('#edit_data_modal').modal('show');
+
+      }
+
+       function UpdateAdminReply(){
+
+              $("#data-edit-common-form").submit(function (e) {
+                   e.preventDefault();
+               });
+
+               if (!$("#data-edit-common-form").valid()) {
+                    event.preventDefault();
+                   return false;
+               }
+               
+ 
+
+               let AdminReply = $("#AdminReply").val();
+               let ContactUsID=$("#ContactUsID").val();
+             
+               if(!checkIfStringIsEmtpy(AdminReply) || !checkIfStringIsEmtpy(ContactUsID)){
+                   toastr.error('Please fill all required fields.');
+                   return false;
+               }
+
+
+                //--make form data
+                var formDate = {
+                    AdminReply: AdminReply,
+                    ContactUsID: ContactUsID,
+                 
+                }
+
+                let saveUrl = "@Url.Action("UpdateAdminReply", "AdminHome")";
+                 $.ajax({
+                       type: "POST",
+                       url: saveUrl,
+                       data: formDate,
+                       // datatype: "json",
+                       cache: false,
+                       async: false,
+
+                       success: function (data) {
+                            console.log(data);
+                            if (data.success) {
+                            toastr.success('Saved Successfully!');
+                            setTimeout(function () {
+                                $('#search-form').trigger("reset");
+                                $('#data-edit-common-form').trigger("reset");
+                                $('#edit_data_modal').modal('hide');
+                                searchFilter();
+                            }, 500);
+                            } else {
+
+                            toastr.error(data.message);
+                            }
+
+                       },
+                       error: function (xhr, ajaxOptions, thrownError) {
+                         toastr.error('An error occured. Please try again!');
+                       }
+                   })
+
+        }
+
+
+</script>
+}

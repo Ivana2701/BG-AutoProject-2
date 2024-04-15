@@ -1,0 +1,14 @@
+﻿
+
+<div class="breadcrumbs-area">
+    @{
+        string BreadCrumTitle = String.IsNullOrWhiteSpace(ViewBag.BreadCrumTitle) ? "Main" : ViewBag.BreadCrumTitle;
+        string BreadCrumSubTitle = String.IsNullOrWhiteSpace(ViewBag.BreadCrumSubTitle) ? "List" : ViewBag.BreadCrumSubTitle;
+    }
+    <ul>
+        <li>
+            <a href="#">@BreadCrumTitle</a>
+        </li>
+        <li>@BreadCrumSubTitle</li>
+    </ul>
+</div>

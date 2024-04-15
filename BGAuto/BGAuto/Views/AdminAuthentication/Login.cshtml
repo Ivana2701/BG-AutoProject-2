@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+  Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AKKHOR | Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+
+      <!-- Normalize CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/normalize.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/main.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/bootstrap.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/all.min.css" />
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/fonts/flaticon.css" />
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/animate.min.css" />
+
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="~/themeContent/admin/css/jquery.dataTables.min.css">
+
+    <!-- Custom CSS -->
+    <link href="~/themeContent/admin/css/style.css" rel="stylesheet"/>
+
+      <!-- site CSS -->
+    <link href="~/css/site.css" rel="stylesheet"/>
+
+    <!-- Modernize js -->
+    <script src="~/themeContent/admin/js/modernizr-3.6.0.min.js"></script>
+
+    <!-- toaster alerts css-->
+    <link href="~/themeContent/admin/toastr/toastr.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
+    <!-- Login Page Start Here -->
+    <div class="login-page-wrap">
+        <div class="login-page-content">
+            <div class="login-box">
+                <div class="item-logo">
+                    <img src="~/themeContent/admin/img/logo3.png" width="210" height="50" alt="logo">
+                </div>
+                <form  class="login-form">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address" class="form-control" required>
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter password" id="Password" name="Password" class="form-control" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                  
+                    <div class="form-group">
+                        <button type="button" onclick="LoginUser();" class="login-btn">Login</button>
+                    </div>
+                </form>
+              
+            </div>
+         
+        </div>
+    </div>
+    <!-- Login Page End Here -->
+
+
+       <!-- jquery-->
+    <script src="~/themeContent/admin/js/jquery-3.3.1.min.js"></script>
+    <!-- Plugins js -->
+    <script src="~/themeContent/admin/js/plugins.js"></script>
+    <!-- Popper js -->
+    <script src="~/themeContent/admin/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/themeContent/admin/js/bootstrap.min.js"></script>
+
+    <!-- Scroll Up Js -->
+    <script src="~/themeContent/admin/js/jquery.scrollUp.min.js"></script>
+
+      <!-- toaster alerts js-->
+    <script src="~/themeContent/admin/toastr/toastr.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="~/themeContent/admin/js/main.js"></script>
+    <script src="~/js/site.js"></script>
+
+      <!--jquery validation script -->
+    <script src="~/js/jquery-validation-unobtrusive/jquery.validate.min.js"></script>
+    <script src="~/js/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+     <!-- common Js in layout -->
+    <script>
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-bottom-right",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 2000,
+            "extendedTimeOut": 1000
+        };
+    </script>
+
+
+    <script>
+            function LoginUser(){
+              
+          $(".login-form").submit(function (e) {
+               e.preventDefault();
+           });
+
+           if (!$(".login-form").valid()) {
+               //  event.preventDefault();
+               return false;
+           }
+
+           let EmailAddress = $("#EmailAddress").val();
+           let Password=$("#Password").val();
+        
+
+           if(!checkIfStringIsEmtpy(EmailAddress) || !checkIfStringIsEmtpy(Password)){
+               toastr.error('Please fill email and password fields.');
+               return false;
+           }
+
+
+            //--make form data 
+            var formDate = {
+                EmailAddress: EmailAddress,
+                Password: Password
+             
+            }
+
+            let loginURL = "@Url.Action("LoginJson", "AdminAuthentication")";
+             $.ajax({
+                   type: "POST",
+                   url: loginURL,
+                   data: formDate,
+                   // datatype: "json",
+                   cache: false,
+                   async: false,
+
+                   success: function (data) {
+                        console.log(data);
+                        if (data.success) {
+                        toastr.success('Login Successfully!');
+                        setTimeout(function () {
+                           location.href = "@Url.Action("Index", "AdminHome")";
+                        }, 500);
+                        } else {
+                       
+                        toastr.error(data.message);
+                        }
+
+                   },
+                   error: function (xhr, ajaxOptions, thrownError) {
+                     toastr.error('An error occured. Please try again!');
+                   }
+               })
+
+    }
+    </script>
+
+</body>
+
+</html>

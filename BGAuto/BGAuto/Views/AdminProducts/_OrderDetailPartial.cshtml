@@ -1,0 +1,50 @@
+﻿@model BGAuto.Models.CommonEntities.BasicDataModel
+
+<table class="table display text-nowrap" id="table_listing_data">
+    <thead>
+        <tr>
+            <th class="no-sort">OrderID</th>
+            <th class="no-sort">Detail ID</th>
+            <th class="no-sort"> Product</th>
+
+            <th class="no-sort">Quantity</th>
+            <th class="no-sort">Price</th>
+            <th class="no-sort">Make</th>
+            <th class="no-sort">Model</th>
+            <th class="no-sort">Color</th>
+            <th class="no-sort">Location</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+            if (Model != null && Model.ordersList != null && Model.ordersList.Count > 0)
+            {
+                foreach (var item in Model.ordersList)
+                {
+                    <tr>
+
+                        <td>@item.OrderID</td>
+                        <td>@item.OrdeDetailID</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price</td>
+                        <td>@item.MakeName</td>
+                        <td>@item.ModelName</td>
+                        <td>@item.ColorName</td>
+                        <td>@item.LocationName</td>
+                      
+
+                    </tr>
+
+                }
+            }
+        }
+
+
+    </tbody>
+</table>
+
+

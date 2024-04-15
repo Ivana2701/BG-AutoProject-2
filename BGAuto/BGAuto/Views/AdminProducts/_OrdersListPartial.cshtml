@@ -1,0 +1,103 @@
+﻿@model BGAuto.Models.CommonEntities.BasicDataModel
+
+<table class="table display text-nowrap" id="table_listing_data">
+    <thead>
+        <tr>
+            <th class="no-sort">OrderID</th>
+            <th class="no-sort">Customer FullName</th>
+            <th class="no-sort"> Phone</th>
+
+            <th class="no-sort">Email Address</th>
+            <th class="no-sort">Delivery Date</th>
+            <th class="no-sort">Total Amount ($)</th>
+            <th class="no-sort">Status</th>
+            <th class="no-sort">Created On</th>
+            <th class="no-sort">Total Items</th>
+            <th class="no-sort">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+            if (Model != null && Model.ordersList != null && Model.ordersList.Count > 0)
+            {
+                foreach (var item in Model.ordersList)
+                {
+                    <tr>
+
+                        <td>
+                        <a href="@Url.Action("OrderDetail","AdminProducts" , new {OrderID=item.OrderID})">   @item.OrderID</a>
+                     
+                        </td>
+                        <td>@item.CustomerFullName</td>
+                        <td>@item.CustomerPhone</td>
+                        <td>@item.CustomerEmail</td>
+                        <td>@item.DeliveryDate</td>
+                        <td>@item.TotalAmount</td>
+                        @{
+                            if (item.StatusName == "Active")
+                            {
+                                <td class="badge badge-pill badge-warning d-block mg-t-8">
+
+                                    <label style="cursor:pointer;" onclick="showOderStatusModal('@item.OrderID');">Active</label>
+
+                                </td>
+                             
+                            }
+                            else if (item.StatusName == "In Progress")
+                            {
+                                <td class="badge badge-pill badge-info d-block mg-s-8">
+                              
+                                <label style="cursor:pointer;" onclick="showOderStatusModal('@item.OrderID');">In Progress</label>
+                                
+                                </td>
+                            }
+                            else if (item.StatusName == "Completed")
+                            {
+                                <td class="badge badge-pill badge-success d-block mg-s-8">
+
+                                     <label style="cursor:pointer;" onclick="showOderStatusModal('@item.OrderID');">Completed</label>
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="badge badge-pill badge-yellow d-block mg-t-8">
+
+                                    <label style="cursor:pointer;" onclick="showOderStatusModal('@item.OrderID');">Active</label>
+
+                                </td>
+
+                            }
+
+                        }
+
+                        <td>@item.CreatedOn</td>
+                        <td>@item.TotalItems</td>
+
+
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+
+                                    <a class="dropdown-item" href="@Url.Action("OrderDetail","AdminProducts" , new {OrderID=item.OrderID})"><i class="fas fa-cogs text-dark-pastel-green"></i>Order Detail</a>
+
+
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            }
+        }
+
+
+    </tbody>
+</table>
+
+

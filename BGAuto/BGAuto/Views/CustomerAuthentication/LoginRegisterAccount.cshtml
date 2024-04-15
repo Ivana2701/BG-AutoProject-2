@@ -1,0 +1,267 @@
+﻿
+@{
+    ViewData["Title"] = "User Account";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+
+
+	<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>My Account</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Account</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Login | Register</li>
+				</ol>
+			</div>
+
+		</section><!-- #page-title end -->
+
+
+			<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="row">
+
+						<div class="col-md-4">
+
+							<div class="well well-lg mb-0">
+								<form id="login-form" name="login-form" class="row" action="#" method="post">
+
+									<div class="col-12">
+										<h3>Login to your Account</h3>
+									</div>
+
+									<div class="col-12 form-group">
+										<label for="EmailAddressLogin">Email:</label>
+										<input type="text" id="EmailAddressLogin" name="EmailAddressLogin" value="" class="form-control" />
+									</div>
+
+									<div class="col-12 form-group">
+										<label for="PasswordLogin">Password:</label>
+										<input type="password" id="PasswordLogin" name="PasswordLogin" value="" class="form-control" />
+									</div>
+
+									<div class="col-12 form-group">
+										<button class="btn btn-secondary m-0" id="login-form-submit" name="login-form-submit" value="login" onclick="LoginUser();">Login</button>
+									@*	<a href="#" class="float-end">Forgot Password?</a>*@
+									</div>
+
+								</form>
+							</div>
+
+						</div>
+
+						<div class="col-md-8">
+
+
+							<h3>Don't have an Account? Register Now.</h3>
+
+							<p>If you don't have an accout, then you can create here your new account by filling the following form.</p>
+
+							<form id="register-form" name="register-form" class="row" action="#" method="post">
+
+								<div class="col-6 form-group">
+									<label for="FullName">Full Name:</label>
+									<input type="text" id="FullName" name="FullName"  class="form-control" required/>
+								</div>
+
+								<div class="col-6 form-group">
+									<label for="EmailAddress">Email Address:</label>
+									<input type="text" id="EmailAddress" name="EmailAddress"  class="form-control" required/>
+								</div>
+
+								<div class="w-100"></div>
+
+							
+
+								<div class="col-6 form-group">
+									<label for="Phone">Phone:</label>
+									<input type="text" id="Phone" name="Phone" value="" class="form-control" required/>
+								</div>
+
+								<div class="w-100"></div>
+
+								<div class="col-6 form-group">
+									<label for="Password">Choose Password:</label>
+									<input type="password" id="Password" name="Password" value="" class="form-control" required/>
+								</div>
+
+								<div class="col-6 form-group">
+									<label for="ConfirmPassword">Re-enter Password:</label>
+									<input type="password" id="ConfirmPassword" name="ConfirmPassword" value="" class="form-control" required/>
+								</div>
+
+								<div class="w-100"></div>
+
+								<div class="col-12 form-group">
+									<button class="btn btn-dark m-0" onclick="RegisterUser();" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+
+
+
+@section  Scripts{
+
+    <script>
+
+		 function LoginUser(){
+              
+
+
+          $("#login-form").submit(function (e) {
+               e.preventDefault();
+           });
+
+           if (!$("#login-form").valid()) {
+               //  event.preventDefault();
+               return false;
+           }
+
+           let EmailAddressLogin = $("#EmailAddressLogin").val();
+           let PasswordLogin=$("#PasswordLogin").val();
+        
+
+           if(!checkIfStringIsEmtpy(EmailAddressLogin) || !checkIfStringIsEmtpy(PasswordLogin)){
+               toastr.error('Please fill email and password fields.');
+               return false;
+           }
+
+
+            //--make form data 
+            var formDate = {
+                EmailAddress: EmailAddressLogin,
+                Password: PasswordLogin
+             
+            }
+
+            let loginURL = "@Url.Action("LoginJsonUser", "CustomerAuthentication")";
+             $.ajax({
+                   type: "POST",
+                   url: loginURL,
+                   data: formDate,
+                   // datatype: "json",
+                   cache: false,
+                   async: false,
+
+                   success: function (data) {
+                        console.log(data);
+                        if (data.success) {
+                        toastr.success('Login Successfully!');
+                        setTimeout(function () {
+                           location.href = "@Url.Action("Index", "CustomerHome")";
+                        }, 500);
+                        } else {
+                       
+                        toastr.error(data.message);
+                        }
+
+                   },
+                   error: function (xhr, ajaxOptions, thrownError) {
+                     toastr.error('An error occured. Please try again!');
+                   }
+               })
+
+    }
+
+
+function RegisterUser(){
+              
+
+
+          $("#register-form").submit(function (e) {
+               e.preventDefault();
+           });
+
+           if (!$("#register-form").valid()) {
+               //  event.preventDefault();
+               return false;
+           }
+
+
+
+           let FullName = $("#FullName").val();
+           let EmailAddress=$("#EmailAddress").val();
+           let Phone=$("#Phone").val();
+           let Password=$("#Password").val();
+           let ConfirmPassword=$("#ConfirmPassword").val();
+        
+
+           if(!checkIfStringIsEmtpy(FullName) || !checkIfStringIsEmtpy(EmailAddress)){
+               toastr.error('Please fill FullName and Email fields.');
+               return false;
+           }
+
+
+            if(!checkIfStringIsEmtpy(Password) || !checkIfStringIsEmtpy(ConfirmPassword)){
+               toastr.error('Please fill password and confirm password fields.');
+               return false;
+           }
+
+           if(Password!=ConfirmPassword){
+                toastr.error('Password does not match.');
+               return false;
+           }
+
+
+
+            //--make form data 
+            var formDate = {
+                FullName: FullName,
+                EmailAddress: EmailAddress,
+                Phone: Phone,
+                Password: Password,
+             
+            }
+
+            let loginURL = "@Url.Action("RegisterJsonUser", "CustomerAuthentication")";
+             $.ajax({
+                   type: "POST",
+                   url: loginURL,
+                   data: formDate,
+                   // datatype: "json",
+                   cache: false,
+                   async: false,
+
+                   success: function (data) {
+                        console.log(data);
+                        if (data.success) {
+                        toastr.success('Register Successfully!');
+                        setTimeout(function () {
+                           location.href = "@Url.Action("Index", "CustomerHome")";
+                        }, 500);
+                        } else {
+                       
+                        toastr.error(data.message);
+                        }
+
+                   },
+                   error: function (xhr, ajaxOptions, thrownError) {
+                     toastr.error('An error occured. Please try again!');
+                   }
+               })
+
+    }
+
+
+
+    </script>
+
+
+}
