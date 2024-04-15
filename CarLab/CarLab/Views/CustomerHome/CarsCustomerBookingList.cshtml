@@ -1,0 +1,153 @@
+﻿@model CarLab.Models.CommonEntities.BasicDataModel
+@{
+    ViewData["Title"] = "Car Listing";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+    <!-- Page Title
+        ============================================= -->
+        <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('/themeContent/customer/demos/car/images/hero-slider/4.jpg'); background-size: cover; padding: 120px 0;" data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -300px;">
+
+            <div class="container clearfix">
+                <h1>Customer Booking</h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Cars</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Listing</li>
+                </ol>
+            </div>
+
+        </section><!-- #page-title end -->
+
+
+<!-- Content
+        ============================================= -->
+        <section id="content">
+            <div class="content-wrap pt-0" style="overflow: visible;">
+
+
+                <div class="section m-0 pt-0 bg-transparent">
+                    <div class="container">
+
+                        <!-- Grid Filter
+                        ============================================= -->
+                        <ul class="grid-filter style-2 w-100" data-container="#portfolio">
+
+
+
+                        </ul><!-- .grid-filter end -->
+
+                        <!-- Portfolio Items
+                        ============================================= -->
+                       @*  <div id="portfolio" class="portfolio row gutter-30 grid-container products-list-row" data-layout="fitRows">*@
+                         <div id="portfolio" class="portfolio row gutter-30  products-list-row" data-layout="fitRows">
+
+
+                    @{
+                        if (Model != null && Model.productsList != null && Model.productsList.Count > 0)
+                        {
+                           
+                            foreach (var item in Model.productsList)
+                            {
+                                 <article class="portfolio-item col-12 col-sm-6 col-md-4">
+                                    <div class="grid-inner">
+                                        <div class="portfolio-image">
+                                            <a href="#" >
+
+                                                @if (item.ProductImage != null)
+                                                {
+                                                    string bitString = BitConverter.ToString(item.ProductImage);
+                                                    if (bitString == "00" || bitString == "")
+                                                    {
+                                                       
+                                                         <img src="~/themeContent/customer/demos/car/images/filter-cars/1.jpg" alt="Open Imagination">
+                                                    }
+                                                    else
+                                                    {
+                                                        string imageBase64Data = Convert.ToBase64String(item.ProductImage);
+                                                        string imageDataURL = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+
+                                                         <img src="@imageDataURL" alt="Open Imagination">
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                     <img src="~/themeContent/customer/demos/car/images/filter-cars/1.jpg" alt="Open Imagination">
+                                                }
+
+                                               
+
+                                             
+                                            </a>
+                                        </div>
+                                        <div class="portfolio-desc">
+                                            <h3><a href="#">@item.ProductName </a></h3>
+                                            <span>
+
+                                                @{
+                                                    item.Description = String.IsNullOrWhiteSpace(item.Description) ? "" : (item.Description.Substring(0, item.Description.Length>100 ? 100 : item.Description.Length));
+                                                    item.Description = item.Description.Length > 99 ? (item.Description + "...") : item.Description;
+                                                }
+                                                 @item.Description
+                                            </span>
+                                        </div>
+                                        <div class="row g-0 car-p-features font-primary clearfix">
+                                            
+                                            <div class="col-lg-4 col-6 p-0"><i class="icon-car-door"></i><span> @item.Seats Seater</span></div>
+                                       
+
+                                            <div class="col-lg-4 col-6 p-0"><i class="icon-car-signal"></i><span>Order No: @item.OrderID</span></div>
+                                          
+                                            <div class="col-lg-4 col-6 p-0"><i class="icon-car-care"></i><span> @item.ProductYear</span></div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            }
+                        }
+                        else
+                        {
+                              <article class="portfolio-item col-12 col-sm-6 col-md-4">
+                                    <div class="grid-inner">
+                                        <h3>No Data found</h3>
+                                    </div>
+                                </article>
+
+                        }
+                    }
+
+                          
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section center nbottomomargin mt-3 footer-stick" style="padding:80px 0 ">
+                    <div class="container clearfix">
+                        <h3 class="font-primary">Special Offers on Villa Long Term Rentals &amp; Lease Agreements</h3>
+                        <a href="@Url.Action("ContactUs","CustomerHome")" class="button button-color button-large button-rounded">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- #content end -->
+
+
+
+
+@section  Scripts{
+
+    <script>
+
+
+        	
+
+
+    </script>
+
+
+}
+
+
+
+

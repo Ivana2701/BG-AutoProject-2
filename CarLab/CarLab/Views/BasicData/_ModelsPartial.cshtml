@@ -1,0 +1,57 @@
+﻿@model CarLab.Models.CommonEntities.BasicDataModel
+
+<table class="table display text-nowrap" id="table_listing_data">
+    <thead>
+        <tr>
+
+            <th class="no-sort"> ID</th>
+            <th class="no-sort"> Model Name</th>
+            <th class="no-sort"> Make</th>
+            <th class="no-sort">CreatedOn</th>
+         
+         
+            <th class="no-sort">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+            if (Model != null && Model.ModelsList != null && Model.ModelsList.Count > 0)
+            {
+                foreach (var item in Model.ModelsList)
+                {
+                    <tr>
+
+                        <td>@item.ModelID</td>
+                        <td>@item.ModelName</td>
+                        <td>@item.MakeName</td>
+                        <td>@item.CreatedOn</td>
+                     
+                     
+                    
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+
+                                    <a class="dropdown-item" href="#!"  onclick="showEditModal('@item.ModelID',  '@item.MakeID', '@item.ModelName');"><i class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" onclick="showDeleteModal('@item.ModelID', 'ModelID', 'Models');" href="#!"><i class="fas fa-times text-orange-red"></i>Delete</a>
+
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            }
+        }
+
+
+    </tbody>
+</table>
+
+

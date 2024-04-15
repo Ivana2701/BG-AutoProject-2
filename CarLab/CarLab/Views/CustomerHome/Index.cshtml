@@ -1,0 +1,230 @@
+﻿@model CarLab.Models.CommonEntities.BasicDataModel
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+
+
+
+        <!-- Content
+        ============================================= -->
+        <section id="content" class="clearfix">
+
+            <div class="content-wrap pb-0" style="padding-top: 1px">
+
+
+                   <!-- 360 degree car
+                ============================================= -->
+                <div class="section dark mb-0 clearfix" style="background: #FFF url('/themeContent/customer/demos/car/images/1.jpg') right bottom no-repeat; background-size: cover; padding: 80px 0 40px; margin: 3px 0 !important;">
+                    <div class="container-fluid clearfix" style="position: relative; z-index: 2;">
+                        <div class="row clearfix">
+                            <div class="col-lg-8">
+                                <div class="heading-block border-0 mb-0 center">
+                                    <h3 style="font-size: 32px; text-transform: ;  font-weight: 700;">360 Degree Car View</h3>
+                                </div>
+                                <!-- 360 degree Car Content -->
+                                <div class="threesixty 360-car">
+                                    <div class="spinner">
+                                        <span>0%</span>
+                                    </div>
+                                    <ol class="threesixty_images"></ol>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="row clearfix">
+                                    <div class="col-lg-10">
+                                        <div class="heading-block topmargin-sm border-0">
+                                            <h3 style="text-transform: none; font-size: 36px; letter-spacing: 0px; font-weight: 700;">Select your favorite</h3>
+                                            <span>Just select your desired make, model and favorite color and click search. You will be land on your dream page.</span>
+                                        </div>
+                                        <form id="login-form" name="login-form" asp-area="" asp-controller="CustomerHome" asp-action="CarsList" class="row mb-0"  method="get">
+
+                                            <div class="col-12 form-group">
+                                                <select class="selectpicker w-100 customjs" id="MakeID" name="MakeID"  title="Select Make" data-live-search="true" data-size="6">
+                                            @{
+                                                if (Model != null && Model.MakesList != null && Model.MakesList.Count > 0)
+                                                {
+                                                    foreach (var item in Model.MakesList)
+                                                    {
+                                                         <option value="@item.MakeID">@item.MakeName</option>
+                                                    }
+                                                }
+
+                                            }
+                                                </select>
+                                            </div>
+
+
+                                              <div class="col-12 form-group">
+                                                <select class="selectpicker w-100 customjs" id="LocationID" name="LocationID" title="Select Location" data-live-search="true" data-size="6">
+                                            @{
+                                                if (Model != null && Model.CarsLocationsList != null && Model.CarsLocationsList.Count > 0)
+                                                {
+                                                    foreach (var item in Model.CarsLocationsList)
+                                                    {
+                                                                                 <option value="@item.LocationID">@item.LocationName</option>
+                                                    }
+                                                }
+
+                                            }
+                                                </select>
+                                            </div>
+
+                                                <div class="col-12 form-group">
+                                                <select class="selectpicker w-100 customjs" id="ColorID" name="ColorID" title="Select Color" data-live-search="true" data-size="6">
+                                            @{
+                                                if (Model != null && Model.ColorsList != null && Model.ColorsList.Count > 0)
+                                                {
+                                                    foreach (var item in Model.ColorsList)
+                                                    {
+                                                                      <option value="@item.ColorID">@item.ColorName</option>
+                                                    }
+                                                }
+
+                                            }
+                                                </select>
+                                            </div>
+
+
+                                            <div class="col-12 form-group">
+                                                <button class="button button-rounded w-100 fw-normal m-0" id="login-form-submit" name="login-form-submit" value="login">Search</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-wrap d-block d-md-block d-lg-none" style="z-index: 0;">
+                        <div class="video-overlay" style="background: rgba(255,255,255,0.8);"></div>
+                    </div>
+                </div> <!-- 360 Degree Section End -->
+
+
+                <!-- Moving car on scroll
+                ============================================= -->
+                <div class="section mt-0 clearfix" style="padding: 100px 0">
+                    <div class="running-car mt-6">
+                        <img class="car" src="~/themeContent/customer/demos/car/images/moving-car/car.jpg" alt="Image">
+                        <img class="wheel" src="~/themeContent/customer/demos/car/images/moving-car/car-tier.png" alt="Image">
+                    </div>
+                    <div class="container clearfix">
+                        <div class="row clearfix" style="position: relative;">
+                            <div class="col-lg-6 offset-lg-6">
+                                <div class="heading-block hlarge">
+                                    <h3>Our Fleet<br>Your Fleet</h3>
+                                </div>
+                                <p>
+                                    We are considering our customer requirements from the core of our heart. We always focus on quality and best practices. You can now choose any car from the fleet according to your dreams.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Moving car on scroll End -->
+
+
+
+
+                <!-- Featured Section
+                ============================================= -->
+                <div class="section m-0 clearfix" style="background: #FFF url('/themeContent/customer/demos/car/images/features/section-bg.jpg') left bottom no-repeat; background-size: cover; padding: 140px 0">
+                    <div class="container clearfix">
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-9">
+                                <div class="heading-block">
+                                    <h3 style="font-size: 58px; line-height: 56px; letter-spacing: -2px">Book Once<br>Get Free Services</h3>
+                                </div>
+                                <p>We are providing free services to our customers in different areas. If it is your first time on this site, then we will provide free driver service if you are still not driving a car. We also provide prizes if you spend more than 48 hours of booking.</p>
+
+                                <div class="row topmargin clearfix">
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain media-box">
+                                            <div class="fbox-icon" style="position: relative;">
+                                                <a href="#"><i class="icon-car-service2"></i></a>
+                                            </div>
+                                            <div class="fbox-content" style="margin-top: 25px">
+                                                <h3>Free Oil Change.</h3>
+                                                <p class="fw-light" style="color: #666;">Book our car only once, and get free oil change for your any vehicle twice a year. This offer is for limited time.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="feature-box fbox-plain media-box">
+                                            <div class="fbox-icon" style="position: relative;">
+                                                <a href="#"><i class="icon-car-crane"></i></a>
+                                            </div>
+                                            <div class="fbox-content" style="margin-top: 25px">
+                                                <h3>Free Towings.</h3>
+                                                <p class="fw-light" style="color: #666;">In case of any failure in the way and if your are not able to repair the car at immediate bases, then our trucks will shift the car in free..</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Featured end -->
+
+                <!-- Buy And Sell Section
+                ============================================= -->
+                <div class="section m-0 p-0 clearfix">
+                    <div class="row align-items-stretch clearfix">
+                        <!-- Half Section 1 -->
+                        <div class="col-lg-6 dark bg-color" style="background: url('/themeContent/customer/demos/car/images/5.jpg') center center no-repeat; background-size: cover;">
+                            <div class="col-padding clearfix">
+                                <i class="i-plain i-xlarge icon-car-service inline-block" style="margin-bottom: 20px;"></i>
+                                <div class="heading-block border-0" style="margin-bottom: 20px;">
+                                    <h3>Are You Looking for a New Car?</h3>
+                                </div>
+                                <p>We have hunderds of all models cars available for rent in all the mentioned cities. Want to know more about, just click on Know more.</p>
+                                <a href="@Url.Action("CarsList","CustomerHome")" class="button button-rounded button-white button-light m-0">Know More</a>
+                            </div>
+                        </div>
+                        <!-- Half Section 2 -->
+                        <div class="col-lg-6 clearfix bg-color" style="background: url('/themeContent/customer/demos/car/images/6.jpg') center center no-repeat; background-size: cover;">
+                            <div class="col-padding clearfix">
+                                <i class="i-plain i-xlarge icon-car-care inline-block" style="margin-bottom: 20px;"></i>
+                                <div class="heading-block border-0" style="margin-bottom: 20px;">
+                                    <h3>Want to book a new car?</h3>
+                                </div>
+                                <p>You can book a new car on best affordable price as compare to other cal dealers in the city. If you are not a driver, then our captain will be availabe for you if you want. </p>
+                                <a href="@Url.Action("ContactUs","CustomerHome")" class="button button-large button-dark button-black button-rounded m-0">Know More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Before Footer Section
+                ============================================= -->
+                <div class="section m-0 clearfix" style="background: #FFF url('/themeContent/customer/demos/car/images/footer-bg.jpg') center bottom no-repeat; background-size: cover; height: 770px">
+                    <div class="mx-auto dark center clearfix" style="max-width: 570px">
+                        <div class="heading-block dark bottommargin-sm border-0">
+                            <h2 class="nott fw-medium">Raise Your Heart</h2>
+                            <p style="color: #DDD; margin-top: 10px">Just imaging if you get a car like this on rent in a very affordable price and visit the beautiful locations with your beloved one then how amazing this opportunity will be.</p>
+                        </div>
+                        <a href="@Url.Action("ContactUs","CustomerHome")" class="uppercase fw-bold ls2" style="color: #FFF; font-size: 12px; border-bottom: 1px solid #FFF">Request a Car</a> &rarr;
+                    </div>
+                </div>
+            </div>
+        </section><!-- #content end -->
+
+@section  Scripts{
+
+    <script>
+
+
+
+
+
+    </script>
+
+
+}
+
+
+
+

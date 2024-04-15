@@ -1,0 +1,46 @@
+﻿@model CarLab.Models.CommonEntities.BasicDataModel
+
+
+@{
+    int notificationCount = 0;
+    if (Model != null && Model.NotificationsList != null && Model.NotificationsList.Count > 0)
+    {
+        notificationCount = Model.NotificationsList.Count;
+    }
+}
+
+
+<a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+   aria-expanded="false">
+    <i class="far fa-bell"></i>
+    <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
+    <span>@notificationCount</span>
+</a>
+
+<div class="dropdown-menu dropdown-menu-right">
+    <div class="item-header">
+        <h6 class="item-title">@notificationCount Notifiacations</h6>
+    </div>
+    <div class="item-content" style="max-height: 300px;overflow-y: scroll;">
+
+        @{
+            if (Model != null && Model.NotificationsList != null && Model.NotificationsList.Count > 0)
+            {
+                foreach (var item in Model.NotificationsList)
+                {
+                    <div class="media">
+                        <div class="item-icon bg-skyblue">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="media-body space-sm">
+                            <div class="post-title">@item.Message</div>
+                            <span>@item.CreatedOn</span>
+                        </div>
+                    </div>
+                }
+            }
+        }
+
+
+    </div>
+</div>

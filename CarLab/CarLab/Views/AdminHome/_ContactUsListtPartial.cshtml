@@ -1,0 +1,65 @@
+﻿@model CarLab.Models.CommonEntities.BasicDataModel
+
+<table class="table display text-nowrap" id="table_listing_data">
+    <thead>
+        <tr>
+        	
+            <th class="no-sort">ContactUs ID</th>
+            <th class="no-sort">Customer Name</th>
+            <th class="no-sort">Customer Email</th>
+            <th class="no-sort">CustomerPhone</th>
+
+            <th class="no-sort">CustomerMessage</th>
+            <th class="no-sort">AdminReply</th>
+            <th class="no-sort">CustomerAskedOn</th>
+            <th class="no-sort">AdminReliedOn</th>
+           
+            <th class="no-sort">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+            if (Model != null && Model.ContactUsList != null && Model.ContactUsList.Count > 0)
+            {
+                foreach (var item in Model.ContactUsList)
+                {
+                    <tr>
+
+                        <td>@item.ContactUsID</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.CustomerEmail</td>
+                        <td>@item.CustomerPhone</td>
+                        <td>@item.CustomerMessage</td>
+                        <td>@item.AdminReply</td>
+                        <td>@item.CustomerAskedOn</td>
+                        <td>@item.AdminReliedOn</td>
+
+
+
+                        <td>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+
+                                    <a onclick="showReplyModal('@item.ContactUsID');" href="#!" class="dropdown-item" ><i class="fas fa-cogs text-dark-pastel-green"></i>Reply</a>
+
+
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            }
+        }
+
+
+    </tbody>
+</table>
+
+
