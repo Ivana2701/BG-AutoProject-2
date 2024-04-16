@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8oitWVo4uULqxX9DMIV13g4XPQP5PyRlglcUb9D9FT5MpUpRrrqDHKTxXrejLvsKxZv0CQARwmBybvzHuJPc9g==",
+  "dgSpecHash": "hpk4M/5ROCiQckYPW9S07f1tZq9tygDJQWjCHun61LUDhUJj+yDk+pLgiNKveTUgH/Ng9lpLkyJX2Arpr3CnVQ==",
   "success": true,
   "projectFilePath": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/CarLab.csproj",
   "expectedPackageFiles": [
@@ -166,10 +166,7 @@
     "/Users/ibazhdarova/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/ibazhdarova/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/Users/ibazhdarova/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/Users/ibazhdarova/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "/Users/ibazhdarova/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "/Users/ibazhdarova/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "/Users/ibazhdarova/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.32/microsoft.netcore.app.host.osx-x64.3.1.32.nupkg.sha512"
+    "/Users/ibazhdarova/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": [
     {
@@ -179,7 +176,7 @@
       "message": "Package 'System.Data.SqlClient' 4.8.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8g2p-5pqh-5jmc",
       "libraryId": "System.Data.SqlClient",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net8.0"
       ]
     },
     {
@@ -189,7 +186,7 @@
       "message": "Package 'System.Data.SqlClient' 4.8.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
       "libraryId": "System.Data.SqlClient",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        "net8.0"
       ]
     }
   ]

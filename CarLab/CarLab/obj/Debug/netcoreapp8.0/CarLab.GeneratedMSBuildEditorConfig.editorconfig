@@ -1,0 +1,195 @@
+is_global = true
+build_property.TargetFramework = netcoreapp8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CarLab
+build_property.RootNamespace = CarLab
+build_property.ProjectDir = /Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminAuthentication/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5BdXRoZW50aWNhdGlvbi9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminHome/ContactUsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Ib21lL0NvbnRhY3RVc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Ib21lL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminHome/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Ib21lL1VzZXJQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminHome/_ContactUsListtPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Ib21lL19Db250YWN0VXNMaXN0dFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/OrderDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9PcmRlckRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/OrdersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9PcmRlcnNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/ProductInsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9Qcm9kdWN0SW5zZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/ProductsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9Qcm9kdWN0c0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/ProductUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9Qcm9kdWN0VXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/_OrderDetailPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9fT3JkZXJEZXRhaWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/_OrdersListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9fT3JkZXJzTGlzdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/AdminProducts/_ProductsListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Qcm9kdWN0cy9fUHJvZHVjdHNMaXN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/BasicData/Colors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFzaWNEYXRhL0NvbG9ycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/BasicData/Makes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFzaWNEYXRhL01ha2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/BasicData/Models.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFzaWNEYXRhL01vZGVscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/BasicData/_ColorsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFzaWNEYXRhL19Db2xvcnNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/BasicData/_MakesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFzaWNEYXRhL19NYWtlc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/BasicData/_ModelsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmFzaWNEYXRhL19Nb2RlbHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Common/_CommonModals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uL19Db21tb25Nb2RhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerAuthentication/LoginRegisterAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJBdXRoZW50aWNhdGlvbi9Mb2dpblJlZ2lzdGVyQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL0Fib3V0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/CarsCustomerBookingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL0NhcnNDdXN0b21lckJvb2tpbmdMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/CarsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL0NhcnNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/CartItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL0NhcnRJdGVtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL0NvbnRhY3RVcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/_ProductDetailPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL19Qcm9kdWN0RGV0YWlsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/CustomerHome/_ProductsHomePageList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJIb21lL19Qcm9kdWN0c0hvbWVQYWdlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_AdminHeaderNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19BZG1pbkhlYWRlck5vdGlmaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_Breadcrumbs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19CcmVhZGNydW1icy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_FooterAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Gb290ZXJBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_FooterCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Gb290ZXJDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_HeaderAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkZXJBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_HeaderCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkZXJDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_LayoutCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_SideMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TaWRlTWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
