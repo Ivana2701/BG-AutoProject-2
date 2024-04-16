@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("CarLab")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dac5261ccba4ebd519fd545d8e6a9f4edb59cbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35455b73c6f76b8eeb066444d3f3908adc67b117")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CarLab.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
