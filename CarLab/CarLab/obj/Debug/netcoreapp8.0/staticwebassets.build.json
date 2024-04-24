@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5vLgp406fBeBMt/RveHQeld4+Bg3yPxhk1sEV8ylrwE=",
+  "Hash": "AYThwyajeSgi/wnHNPRIcwW38yoyIO/GnOIYFm6wF3Y=",
   "Source": "CarLab",
   "BasePath": "_content/CarLab",
   "Mode": "Default",
@@ -5753,25 +5753,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/themeContent/customer/demos/car/images/5.jpg"
-    },
-    {
-      "Identity": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/wwwroot/themeContent/customer/demos/car/images/6.jpg",
-      "SourceId": "CarLab",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/wwwroot/",
-      "BasePath": "_content/CarLab",
-      "RelativePath": "themeContent/customer/demos/car/images/6.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/themeContent/customer/demos/car/images/6.jpg"
     },
     {
       "Identity": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/wwwroot/themeContent/customer/demos/car/images/accessories/engines/1.jpg",
