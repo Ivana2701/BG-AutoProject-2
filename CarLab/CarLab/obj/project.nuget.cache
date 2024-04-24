@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hpk4M/5ROCiQckYPW9S07f1tZq9tygDJQWjCHun61LUDhUJj+yDk+pLgiNKveTUgH/Ng9lpLkyJX2Arpr3CnVQ==",
+  "dgSpecHash": "SsoQJnC+d0KN8x31X4RbybyjsECTxMzMNXzg79W1td+IQPW1HeW8UJ4Vzje2fGABRUdGfBeKSC8kyaAEfC7ZuQ==",
   "success": true,
-  "projectFilePath": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/CarLab.csproj",
+  "projectFilePath": "/Users/ibazhdarova/work/CarLabProject/CarLab/CarLab/CarLab.csproj",
   "expectedPackageFiles": [
     "/Users/ibazhdarova/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/ibazhdarova/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

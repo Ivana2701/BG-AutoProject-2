@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/CarLab.csproj": {}
+    "/Users/ibazhdarova/work/CarLabProject/CarLab/CarLab/CarLab.csproj": {}
   },
   "projects": {
-    "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/CarLab.csproj": {
+    "/Users/ibazhdarova/work/CarLabProject/CarLab/CarLab/CarLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/CarLab.csproj",
+        "projectUniqueName": "/Users/ibazhdarova/work/CarLabProject/CarLab/CarLab/CarLab.csproj",
         "projectName": "CarLab",
-        "projectPath": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/CarLab.csproj",
+        "projectPath": "/Users/ibazhdarova/work/CarLabProject/CarLab/CarLab/CarLab.csproj",
         "packagesPath": "/Users/ibazhdarova/.nuget/packages/",
-        "outputPath": "/Users/ibazhdarova/Downloads/BG-AutoProject 2/CarLab/CarLab/obj/",
+        "outputPath": "/Users/ibazhdarova/work/CarLabProject/CarLab/CarLab/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ibazhdarova/.nuget/NuGet/NuGet.Config"
